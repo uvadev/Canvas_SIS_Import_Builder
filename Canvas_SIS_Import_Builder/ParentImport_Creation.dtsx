@@ -1,0 +1,2904 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/24/2019 4:40:47 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="UVASQL"
+  DTS:CreatorName="UVIEW\kshelton"
+  DTS:DTSID="{7D02E52F-63DC-475C-89D2-8B06D3102639}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{CACAF34A-CA5C-4929-B888-2BEFE23504D5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[enrollments.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{EC9E64EB-E04D-4151-BAD4-C33BE7CD3C73}"
+      DTS:ObjectName="enrollments.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\My Drive\Canvas\SIS Imports (Parents)\enrollments.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="course_id"
+              DTS:DTSID="{3720FE7A-7BB6-43BF-8FD7-2FF4E4579B87}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="user_id"
+              DTS:DTSID="{D976AB87-769A-4254-A55A-0FA54CD8BF70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="role"
+              DTS:DTSID="{27B1F78C-0FDA-40FC-8B8C-DF4EF91992ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="section_id"
+              DTS:DTSID="{18FDD67A-5D90-48F9-8387-E5FDA405AD34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{24FFCDF4-72EB-417F-83D4-4136B897978A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FileValidation]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6C337A30-52FA-4114-A6CC-789133DE4906}"
+      DTS:ObjectName="FileValidation">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\My Drive\Canvas\SIS Imports (Parents)\ValidationFile.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pFirstName"
+              DTS:DTSID="{BBAEB605-34F0-4D5A-899A-904016CC058B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pLastName"
+              DTS:DTSID="{BCF578CF-C6B8-4297-85B4-B372CB35DBCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pEmail"
+              DTS:DTSID="{1ED98764-A87D-4291-9B6B-CEF965EE13E6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pUserId"
+              DTS:DTSID="{2C526EAD-D03B-43AC-892F-2E65AA2ABE55}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StudentIndex"
+              DTS:DTSID="{EA89C32F-4BAD-4009-AEAD-87D504138FE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StudentFirstName"
+              DTS:DTSID="{0E579C2D-2C52-4DBC-BD68-D7E157995033}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StudentLastName"
+              DTS:DTSID="{919B9D95-0B61-4ABA-AE9A-4D3F584CCA25}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[users.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8CC541FF-7F53-4ABB-B023-09831A51880B}"
+      DTS:ObjectName="users.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\My Drive\Canvas\SIS Imports (Parents)\users.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="user_id"
+              DTS:DTSID="{A6228C89-0236-4838-ACF6-F3C9925699F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="login_id"
+              DTS:DTSID="{B2B47AEA-E150-4269-ABE1-B61D11654E5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="authentication_provider_id"
+              DTS:DTSID="{3BDF8213-7B5D-48D7-9FA8-434F1DB7D6FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="password"
+              DTS:DTSID="{AEFE8E55-71E0-45AB-97FC-588BDDA1A1EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{11105D23-C6E0-45AB-908D-B40494F49561}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{ED39A93B-BF7E-4CC5-9308-DD63E267188B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="short_name"
+              DTS:DTSID="{E2738C76-F88F-49E0-A7DC-3B4290BADA0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{5D0D9E0D-FD32-471C-95E5-93F8B4438C33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{6FEB08CE-5C1E-45AE-ABB4-5FE7C0C30B67}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[users_delete.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F65C5D02-55E6-4759-918A-32273171C20B}"
+      DTS:ObjectName="users_delete.csv">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\My Drive\Canvas\SIS Imports (Parents)\users_delete.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="sis_user_id"
+              DTS:DTSID="{3B7A0D79-F8A6-4A56-AA6B-AF5421FA817E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unique_name"
+              DTS:DTSID="{DEBBD8DE-1997-405F-9D29-92674E04851F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="full_name"
+              DTS:DTSID="{579735BC-9802-4655-A849-EA8494782F25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="7"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{D83B3673-939F-4E05-8429-8D1614851CC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[users_observers]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F09719AA-3656-4573-A3B0-E6ED7FA6179E}"
+      DTS:ObjectName="users_observers">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="G:\My Drive\Canvas\SIS Imports (Parents)\user_observers.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="observer_id"
+              DTS:DTSID="{CAA00999-3362-42A0-8C2F-D57291AC9436}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="student_id"
+              DTS:DTSID="{9FCF7A92-73FB-49AF-B33F-57CB64D42DEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{87A0BD9D-6817-42DA-AECC-F9A3049E2260}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[UVASQL.CanvasData]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{008C87D7-F6F4-48C7-8B0C-8786D1D932E5}"
+      DTS:ObjectName="UVASQL.CanvasData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=UVASQL;Initial Catalog=CanvasData;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\enrollments csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EFD714A3-0D2A-464B-9370-DF8CD475C6C1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="enrollments csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\enrollments csv\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\enrollments csv\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[enrollments.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[enrollments.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[course_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="course_id"
+                      externalMetadataColumnId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[course_id]"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[course_id]" />
+                    <inputColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]" />
+                    <inputColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[role]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="role"
+                      externalMetadataColumnId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[role]"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[role]" />
+                    <inputColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[section_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="section_id"
+                      externalMetadataColumnId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[section_id]"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[section_id]" />
+                    <inputColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[course_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="course_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[role]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="section_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\enrollments csv\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">declare @sis_id int
+	set @sis_id =  (select 
+						max(cast(SUBSTRING(sis_user_id,CHARINDEX('G',sis_user_id)+1,len(sis_user_id)) as int))
+					from pseudonym_dim
+					where left(sis_user_id, charindex('G',sis_user_id)) like 'pG')
+--set @sis_id = 4859
+select distinct
+	'C2' course_id
+	,u1.user_id 
+	,'student' as role
+	,'' as section_id
+	,'active' as status
+from
+(
+	select distinct
+			concat('pG',@sis_id + ROW_NUMBER() over (order by s1.parentemail)) user_id
+			,s1.ParentEmail as login_id
+			,'1' as authentication_provider_id
+			,LEFT(NEWID(), 8 ) password
+			,s1.ParentFirstName First_Name
+			,s1.ParentLastName Last_Name
+			,'' as shortname
+			,s1.ParentEmail email
+			,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim)
+
+	union
+
+	select distinct
+		p.sis_user_id as user_id
+		,s1.ParentEmail as login_id
+		,'1' as authentication_provider_id
+		,LEFT(NEWID(), 8 ) password
+		,s1.ParentFirstName First_Name
+		,s1.ParentLastName Last_Name
+		,'' as short_name
+		,s1.ParentEmail email
+		,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+		inner join pseudonym_dim p on p.unique_name = s1.parentemail
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim where workflow_state = 'active')
+                   and s1.ParentEmail not in ('rbaudry@abt-law.com')
+) as u1
+inner join jcampus.dbo.JCampusStudentParent jc on jc.ParentEmail = u1.login_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\enrollments csv\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  connectionManagerRefId="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[course_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[course_id]"
+                      length="2"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[course_id]"
+                      name="course_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      length="50"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[role]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      length="7"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[role]"
+                      name="role"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section_id]"
+                      length="1"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[section_id]"
+                      name="section_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="6"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[course_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="course_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="section_id" />
+                    <externalMetadataColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[course_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[course_id]"
+                      name="course_id" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      name="user_id" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[role]"
+                      name="role" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[section_id]"
+                      name="section_id" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\enrollments csv.Paths[OLE DB Source Output]"
+              endId="Package\enrollments csv\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\enrollments csv\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\FileValidation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{696237EE-C4B6-4077-BD6D-DFE8BC147738}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FileValidation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\FileValidation\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FileValidation\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FileValidation]"
+                  connectionManagerRefId="Package.ConnectionManagers[FileValidation]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[pFirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="pFirstName"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pFirstName]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pFirstName]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[pLastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="pLastName"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pLastName]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pLastName]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[pEmail]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="pEmail"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pEmail]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pEmail]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[pUserId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="pUserId"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pUserId]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pUserId]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[StudentIndex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="StudentIndex"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentIndex]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIndex]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[StudentFirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="StudentFirstName"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentFirstName]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFirstName]" />
+                    <inputColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].Columns[StudentLastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="StudentLastName"
+                      externalMetadataColumnId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentLastName]"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentLastName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pFirstName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pLastName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pEmail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pEmail" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[pUserId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pUserId" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentIndex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StudentIndex" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StudentFirstName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[StudentLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StudentLastName" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\FileValidation\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">declare @sis_id int
+	set @sis_id =  (select 
+						max(cast(SUBSTRING(sis_user_id,CHARINDEX('G',sis_user_id)+1,len(sis_user_id)) as int))
+					from pseudonym_dim
+					where left(sis_user_id, charindex('G',sis_user_id)) like 'pG')
+--set @sis_id = 4859
+select distinct
+	u1.First_Name pFirstName
+	,u1.Last_Name pLastName
+	,u1.email pEmail
+	,u1.user_id pUserId
+	,jc.StudentIndex
+	,jc.StudentFirstName
+	,jc.StudentLastName
+from
+(
+	select distinct
+			concat('pG',@sis_id + ROW_NUMBER() over (order by s1.parentemail)) user_id
+			,s1.ParentEmail as login_id
+			,'1' as authentication_provider_id
+			,LEFT(NEWID(), 8 ) password
+			,s1.ParentFirstName First_Name
+			,s1.ParentLastName Last_Name
+			,'' as shortname
+			,s1.ParentEmail email
+			,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim)
+
+	union
+
+	select distinct
+		p.sis_user_id as user_id
+		,s1.ParentEmail as login_id
+		,'1' as authentication_provider_id
+		,LEFT(NEWID(), 8 ) password
+		,s1.ParentFirstName First_Name
+		,s1.ParentLastName Last_Name
+		,'' as short_name
+		,s1.ParentEmail email
+		,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+		inner join pseudonym_dim p on p.unique_name = s1.parentemail
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim where workflow_state = 'active')
+                   and s1.ParentEmail not in ('rbaudry@abt-law.com')
+) as u1
+inner join jcampus.dbo.JCampusStudentParent jc on jc.ParentEmail = u1.login_id
+order by StudentIndex</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\FileValidation\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  connectionManagerRefId="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pFirstName]"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pFirstName]"
+                      name="pFirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pLastName]"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pLastName]"
+                      name="pLastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pEmail]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pEmail]"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pEmail]"
+                      name="pEmail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pUserId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pUserId]"
+                      length="50"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[pUserId]"
+                      name="pUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIndex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIndex]"
+                      length="9"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentIndex]"
+                      name="StudentIndex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentFirstName]"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFirstName]"
+                      name="StudentFirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentLastName]"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentLastName]"
+                      name="StudentLastName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="pFirstName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="pLastName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pEmail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="pEmail" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[pUserId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="pUserId" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentIndex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="StudentIndex" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="StudentFirstName" />
+                    <externalMetadataColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="StudentLastName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pFirstName]"
+                      name="pFirstName" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pLastName]"
+                      name="pLastName" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pEmail]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pEmail]"
+                      name="pEmail" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pUserId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[pUserId]"
+                      name="pUserId" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIndex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentIndex]"
+                      name="StudentIndex" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentFirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentFirstName]"
+                      name="StudentFirstName" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentLastName]"
+                      name="StudentLastName" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\FileValidation.Paths[OLE DB Source Output]"
+              endId="Package\FileValidation\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\FileValidation\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\users csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{17F878F0-64AA-484A-90AD-2CFCC4B9137A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="users csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\users csv\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users csv\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[users.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[users.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[login_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="login_id"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[login_id]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[login_id]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[authentication_provider_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="authentication_provider_id"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[authentication_provider_id]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[authentication_provider_id]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[password]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="password"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[password]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[password]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[First_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="First_Name"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[Last_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="Last_Name"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[short_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="short_name"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[short_name]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[short_name]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="64"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[login_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="login_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[authentication_provider_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="authentication_provider_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[password]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="password" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[short_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="short_name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\users csv\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">declare @sis_id int
+set @sis_id =  (select 
+					max(cast(SUBSTRING(sis_user_id,CHARINDEX('G',sis_user_id)+1,len(sis_user_id)) as int))
+				from pseudonym_dim
+				where left(sis_user_id, charindex('G',sis_user_id)) like 'pG')
+--set @sis_id = 4859
+
+	select distinct
+			concat('pG',@sis_id + ROW_NUMBER() over (order by s1.parentemail)) user_id
+			,s1.ParentEmail as login_id
+			,'1' as authentication_provider_id
+			,LEFT(NEWID(), 8 ) password
+			,s1.ParentFirstName First_Name
+			,s1.ParentLastName Last_Name
+			,'' as short_name
+			,s1.ParentEmail email
+			,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim)
+
+ union
+
+	select distinct
+		p.sis_user_id as user_id
+		,s1.ParentEmail as login_id
+		,'1' as authentication_provider_id
+		,LEFT(NEWID(), 8 ) password
+		,s1.ParentFirstName First_Name
+		,s1.ParentLastName Last_Name
+		,'' as short_name
+		,s1.ParentEmail email
+		,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+		inner join pseudonym_dim p on p.unique_name = s1.parentemail
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim where workflow_state = 'active')
+                  and s1.ParentEmail not in ('rbaudry@abt-law.com')</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users csv\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  connectionManagerRefId="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      length="50"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[login_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[login_id]"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[login_id]"
+                      name="login_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[authentication_provider_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[authentication_provider_id]"
+                      length="1"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[authentication_provider_id]"
+                      name="authentication_provider_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[password]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[password]"
+                      length="8"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[password]"
+                      name="password"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[First_Name]"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[First_Name]"
+                      name="First_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Last_Name]"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last_Name]"
+                      name="Last_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[short_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[short_name]"
+                      length="1"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[short_name]"
+                      name="short_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="6"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[login_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="login_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[authentication_provider_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="authentication_provider_id" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[password]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="password" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[First_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="First_Name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Last_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="Last_Name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[short_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="short_name" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      name="user_id" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[login_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[login_id]"
+                      name="login_id" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[authentication_provider_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[authentication_provider_id]"
+                      name="authentication_provider_id" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[password]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[password]"
+                      name="password" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[First_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[First_Name]"
+                      name="First_Name" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Last_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Last_Name]"
+                      name="Last_Name" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[short_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[short_name]"
+                      name="short_name" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="64"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\users csv.Paths[OLE DB Source Output]"
+              endId="Package\users csv\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\users csv\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\users_delete csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{312E1177-22DC-4664-B678-1CB0A12551CC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="users_delete csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\users_delete csv\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users_delete csv\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[users_delete.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[users_delete.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[sis_user_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="sis_user_id"
+                      externalMetadataColumnId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sis_user_id]"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[sis_user_id]" />
+                    <inputColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[unique_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="unique_name"
+                      externalMetadataColumnId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[unique_name]"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[unique_name]" />
+                    <inputColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[full_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="full_name"
+                      externalMetadataColumnId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[full_name]"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="7"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[sis_user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sis_user_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[unique_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unique_name" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[full_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\users_delete csv\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Canvas_Parent_Upload_Users_Delete]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	sis_user_id
+	,unique_name
+	,name as full_name
+	,'deleted' as status
+from canvasdata.dbo.pseudonym_dim p
+	inner join canvasdata.dbo.user_dim u on p.user_id = u.id
+where 
+	left(sis_user_id,2) like 'pG'
+	and
+		unique_name not in (select 
+		ParentEmail 
+		from jcampus.dbo.JCampusStudentParent)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users_delete csv\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  connectionManagerRefId="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[sis_user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sis_user_id]"
+                      length="50"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[sis_user_id]"
+                      name="sis_user_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[unique_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[unique_name]"
+                      length="100"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[unique_name]"
+                      name="unique_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[full_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[full_name]"
+                      length="50"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[full_name]"
+                      name="full_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="7"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sis_user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="sis_user_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[unique_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="unique_name" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[full_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sis_user_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sis_user_id]"
+                      name="sis_user_id" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[unique_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[unique_name]"
+                      name="unique_name" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[full_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[full_name]"
+                      name="full_name" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\users_delete csv.Paths[OLE DB Source Output]"
+              endId="Package\users_delete csv\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\users_delete csv\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\users_observers csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{874CC4CD-642A-4A0F-B8E2-ED8FF2DA4663}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="users_observers csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\users_observers csv\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users_observers csv\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[users_observers]"
+                  connectionManagerRefId="Package.ConnectionManagers[users_observers]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[observer_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="observer_id"
+                      externalMetadataColumnId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[observer_id]"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[observer_id]" />
+                    <inputColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[student_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="student_id"
+                      externalMetadataColumnId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[student_id]"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[student_id]" />
+                    <inputColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].Columns[status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[observer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="observer_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[student_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="student_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\users_observers csv\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">--Set a variable for the largest parent SIS ID currently in the system
+declare @sis_id int
+	set @sis_id =  (select 
+						max(cast(SUBSTRING(sis_user_id,CHARINDEX('G',sis_user_id)+1,len(sis_user_id)) as int))
+					from pseudonym_dim
+					where left(sis_user_id, charindex('G',sis_user_id)) like 'pG')
+
+
+select distinct
+	u1.user_id as observer_id
+	,jc.StudentIndex as student_id
+	,'active' as status
+from
+(
+	--Find student / parent matches where parent email addresses are in Jcampus but not in Canvas
+	select distinct
+			concat('pG',@sis_id + ROW_NUMBER() over (order by s1.parentemail)) user_id
+			,s1.ParentEmail as login_id
+			,'1' as authentication_provider_id
+			,LEFT(NEWID(), 8 ) password
+			,s1.ParentFirstName First_Name
+			,s1.ParentLastName Last_Name
+			,'' as shortname
+			,s1.ParentEmail email
+			,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim)
+
+	union
+
+	--Find student / parent combinations where parent email address is in canvas, but canvas account is not active	
+	select distinct
+		p.sis_user_id as user_id
+		,s1.ParentEmail as login_id
+		,'1' as authentication_provider_id
+		,LEFT(NEWID(), 8 ) password
+		,s1.ParentFirstName First_Name
+		,s1.ParentLastName Last_Name
+		,'' as short_name
+		,s1.ParentEmail email
+		,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+		inner join pseudonym_dim p on p.unique_name = s1.parentemail
+	where 
+	rn = 1
+	and s1.ParentEmail not in
+		(select unique_name from pseudonym_dim where workflow_state = 'active')
+
+	union
+
+	--Find student / parent combinations for all students that have started in the past month. 
+	--Catches any new students associated with old parent accounts
+	select distinct
+		p.sis_user_id as user_id
+		,s1.ParentEmail as login_id
+		,'1' as authentication_provider_id
+		,LEFT(NEWID(), 8 ) password
+		,s1.ParentFirstName First_Name
+		,s1.ParentLastName Last_Name
+		,'new account' as short_name
+		,s1.ParentEmail email
+		,'active' as status
+	from
+		(select	
+			ParentEmail
+			,ParentFirstName
+			,ParentLastName
+			,StudentEntryDate
+			,row_number() over (partition by parentEmail order by ParentEmail) as rn
+		from jcampus.dbo.JCampusStudentParent) s1
+		inner join pseudonym_dim p on p.unique_name = s1.parentemail
+	where 
+	rn = 1
+	and datediff(day,cast(s1.StudentEntryDate as date),GETDATE()) &lt;30
+) as u1
+inner join jcampus.dbo.JCampusStudentParent jc on jc.ParentEmail = u1.login_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\users_observers csv\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  connectionManagerRefId="Package.ConnectionManagers[UVASQL.CanvasData]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[observer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[observer_id]"
+                      length="50"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[observer_id]"
+                      name="observer_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[student_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[student_id]"
+                      length="9"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[student_id]"
+                      name="student_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      length="6"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[observer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="observer_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[student_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="student_id" />
+                    <externalMetadataColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[observer_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[observer_id]"
+                      name="observer_id" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[student_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[student_id]"
+                      name="student_id" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\users_observers csv.Paths[OLE DB Source Output]"
+              endId="Package\users_observers csv\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\users_observers csv\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{321B0471-3930-4645-BEFB-FA3A69ED90F7}"
+      DTS:From="Package\users csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\users_observers csv" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{6FAC723F-B8DD-4DE8-9A9A-541C32916822}"
+      DTS:From="Package\users_observers csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\enrollments csv" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A95BBF83-7915-4073-BF0D-6A2BDB87DD03}"
+      DTS:From="Package\enrollments csv"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\FileValidation" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\enrollments csv"
+          TopLeft="158.5,215.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\FileValidation"
+          TopLeft="164.5,300.5" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\users csv"
+          TopLeft="171.5,49.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\users_delete csv"
+          TopLeft="355.5,47.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\users_observers csv"
+          TopLeft="147.5,128.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="235.75,91.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="236.75,170.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="236.5,257.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\enrollments csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\enrollments csv\OLE DB Source"
+          TopLeft="134.5,32.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\enrollments csv\Flat File Destination"
+          TopLeft="151.5,129.5" />
+        <EdgeLayout
+          Id="Package\enrollments csv.Paths[OLE DB Source Output]"
+          TopLeft="213,74.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,55"
+              Start="0,0"
+              End="26.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="22.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.5,27.5"
+                    Point2="26.5,27.5"
+                    Point3="26.5,31.5" />
+                  <mssgle:LineSegment
+                    End="26.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\enrollments csv\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\FileValidation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\FileValidation\Flat File Destination"
+          TopLeft="171.5,109.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\FileValidation\OLE DB Source"
+          TopLeft="177.5,4.5" />
+        <EdgeLayout
+          Id="Package\FileValidation.Paths[OLE DB Source Output]"
+          TopLeft="257.75,46.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\FileValidation\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\users csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\users csv\OLE DB Source"
+          TopLeft="134.5,48.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\users csv\Flat File Destination"
+          TopLeft="132.5,133.5" />
+        <EdgeLayout
+          Id="Package\users csv.Paths[OLE DB Source Output]"
+          TopLeft="216.75,90.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\users csv\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\users_delete csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\users_delete csv\OLE DB Source"
+          TopLeft="155.5,155.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\users_delete csv\Flat File Destination"
+          TopLeft="142.5,250.5" />
+        <EdgeLayout
+          Id="Package\users_delete csv.Paths[OLE DB Source Output]"
+          TopLeft="229.5,197.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\users_delete csv\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\users_observers csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\users_observers csv\Flat File Destination"
+          TopLeft="41.5,143.5" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\users_observers csv\OLE DB Source"
+          TopLeft="35.5,35.5" />
+        <EdgeLayout
+          Id="Package\users_observers csv.Paths[OLE DB Source Output]"
+          TopLeft="114,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.5,66"
+              Start="0,0"
+              End="15.5,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="4,33" />
+                  <mssgle:LineSegment
+                    End="11.5,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.5,33"
+                    Point2="15.5,33"
+                    Point3="15.5,37" />
+                  <mssgle:LineSegment
+                    End="15.5,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\users_observers csv\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
